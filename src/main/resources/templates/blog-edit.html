@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редактирование статьи</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div th:each="el : ${post}">
+    <form method="post">
+        <input type="text" th:value="${el.title}" name="title" placeholder="Введите название статьи">
+        <input type="text" th:value="${el.anons}" name="anons" placeholder="Введите анос статьи">
+        <textarea name="full_text" placeholder="Введите текст статьи" th:text="${el.full_text}"></textarea>
+        <br>
+        <button type="submit">Сохранить изменения</button>
+    </form>
+</div>
+</body>
+</html>

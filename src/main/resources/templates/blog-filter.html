@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Фильтрация</h2>
+<form method="post" th:action="${'/blog/filter/result'}">
+    <input type="text" name="title">
+    <button type="submit">Найти</button>
+    <div th:each="el : ${result}">
+        <h3 th:text="${el.title}"></h3>
+        <p th:text="${el.anons}"></p>
+    </div>
+</form>
+</body>
+</html>

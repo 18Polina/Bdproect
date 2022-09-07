@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+<div th:each="el : ${post}">
+  <h3>Подробнее про статью: </h3>
+  <h3 th:text="${el.title}"></h3>
+  <p th:text="${el.anons}"></p>
+  <p th:text="${el.full_text}"></p>
+  <a th:href="'/blog/' + ${el.id} + '/edit'">Редактировать</a>
+  <form th:action="'/blog/' + ${el.id} + '/remove'" method="post">
+    <button type="submit" class="btn btn-del">Удалить</button>
+  </form>
+</div>
+</body>
